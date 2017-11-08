@@ -11,6 +11,8 @@ Rails.application.configure do
 
   # Show full error reports.
   config.consider_all_requests_local = true
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
 
   # Enable/disable caching. By default caching is disabled.
   if Rails.root.join('tmp/caching-dev.txt').exist?
@@ -25,6 +27,8 @@ Rails.application.configure do
 
     config.cache_store = :null_store
   end
+
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
@@ -44,6 +48,8 @@ Rails.application.configure do
 
   # Suppress logger output for asset requests.
   config.assets.quiet = true
+
+  Paperclip.options[:command_path] = "/usr/local/bin"
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true

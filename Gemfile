@@ -5,6 +5,34 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'devise'
+gem 'cancancan'
+gem 'paper_trail'
+gem 'omniauth-google-oauth2'
+gem 'paperclip', '~> 5.0.0'
+gem 'nested_form'
+# https://github.com/sferik/rails_admin
+gem 'rails_admin', '~> 1.2'
+gem 'rails_admin_history_rollback'
+
+gem 'bootstrap-sass', '~> 3.3.6'
+# https://github.com/typescript-ruby/typescript-rails
+# gem 'typescript-rails'
+gem 'jquery-rails'
+
+# gem 'simplecov', :require => false, :group => :test
+
+group :test do
+  gem 'cucumber-rails', :require => false
+# database_cleaner is not required, but highly recommended
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'launchy'
+  gem 'rspec-rails'
+end
+
+
+
 
 group :development do
   gem 'capistrano-rails', '~> 1.1'
@@ -13,22 +41,26 @@ group :development do
   gem 'capistrano-passenger'
   gem 'capistrano-secrets-yml'
   gem 'capistrano-shell'
-  
 end
-
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.18'
+gem 'bcrypt'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
+
+
+
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
  gem 'therubyracer', platforms: :ruby
+
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -42,7 +74,10 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Capistrano for deployment
-#gem 'capistrano-rails', group: :development
+# gem 'capistrano-rails', group: :development
+
+
+# gem 'sass-rails', '>= 3.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -50,6 +85,15 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+
+  # Metrics
+  gem 'rspec-rails' # Rails unit tests framework
+  gem 'simplecov' # Ruby unit tests coverage framework
+  gem 'simplecov-rcov' # Allows to inspect simplecov output in Jenkins
+  gem 'simplecov-json'
+  gem 'rspec_junit_formatter' # Allows to inspect rspec output as junit output in Jen
+
+  gem 'metric_fu'
 end
 
 group :development do

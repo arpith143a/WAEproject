@@ -1,0 +1,39 @@
+
+
+<%= link_to 'Back',root_path %>
+
+<table  class="table">
+ <thead>
+ <tr>
+ <th scope="col">#</th>
+ <th scope="col">Product Name</th>
+ <th scope="col">Title</th>
+ <th scope="col">Cat</th>
+ <th scope="col">Sell/Buy</th>
+
+
+ <th scope="col">Author</th>
+   <th scope="col">Price</th>
+ </tr>
+</thead>
+
+<tbody>
+ <% @items.each do |item| %>
+     <tr>
+       <th scope="row"><%= @non_bid_count %></th>
+       <td><%= item.product_name %></td>
+       <td><%= item.title %></td>
+       <td><%= item.category.name %></td>
+       <td><%= item.sell_type ? 'Sell':'Buy' %></td>
+
+
+       <td><strong><%= link_to item.user.username %></strong></td>
+
+       <td><%= item.product_price %></td>
+       <td><%= link_to 'view', item_path(item) %></td>
+
+     </tr>
+   <% @non_bid_count += 1 %>
+ <% end %>
+</tbody>
+</table>

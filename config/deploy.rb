@@ -7,7 +7,7 @@ set :application, 'wae_project'
 set :repo_url, 'git@vgl-ait.org:web17-07'
 set :deploy_to, '/home/deploy/wae_project'
 set :repo_tree, 'wae_project'
-set :scm, :git
+# set :scm, :git
 append :linked_files, 'config/database.yml', 'config/secrets.yml'
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/system'
 set :rbenv_ruby, '2.4.1'
@@ -15,11 +15,12 @@ set :keep_releases, 5
 set :passenger_restart_with_touch, true
 
 set :default_env, { 
-  'https_proxy' => '192.41.170.23:3128',
-  'http_proxy' => '192.41.170.23:3128',
+  'https_proxy' => 'http://192.41.170.23:3128',
+  'http_proxy' => 'http://192.41.170.23:3128'
 }
 
 # Default branch is :master
+set :branch, :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
