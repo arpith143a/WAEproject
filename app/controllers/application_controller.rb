@@ -5,13 +5,14 @@ class ApplicationController < ActionController::Base
   before_action :update_sanitized_params, if: :devise_controller?
   def update_sanitized_params
     devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :email, :password,
-                                                       :first_name, :last_name, :cell_phone_no, :profession])
+                                                       :first_name, :last_name, :cell_phone_no, :profession, :avatar])
   end
 
   def current_anonymous_user
     # @current_anonymous_user ||= AnonymousUser.find(session[:anonymous_user_id]) if session[:anonymous_user_id]
     tmp_user = AnonymousUser.find(session[:anonymous_user_id]) if session[:anonymous_user_id]
-    if tmp_user && tmp_user.oauth_token == session[:anonymous_user_token] && tmp_user.token_expires?
+    # if tmp_user && tmp_user.oauth_token == session[:anonymous_user_token] && tmp_user.token_expires?
+    if tmp_user && tmp_user.oauth_token == session[:anonymous_user_token] && !tmp_user.token_expires?
       @current_anonymous_user ||= tmp_user
     end
   end
@@ -34,7 +35,8 @@ class ApplicationController < ActionController::Base
   end
 
   rescue_from CanCan::AccessDenied do |exception|
-    flash[:error] = "Access denied., Admin Only!"
+    flash[:error] = "Access denied."
+    # TODO -- create report that is telling that this user trying to violate the site constraint
     redirect_to main_app.root_path
   end
 

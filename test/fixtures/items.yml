@@ -1,0 +1,46 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: kettle
+  type: NonBidItem
+  view_count: 1
+  body: nice
+  sell_type: false
+  product_name: milk kettle
+  product_desc: MyText
+  product_ref_url:
+  product_price: 7.99
+  user: two
+  category: one
+#
+one_close_deal:
+  title: cam
+  type: NonBidItem
+  view_count: 1
+  body: super
+  sell_type: false
+  product_name: DSLR
+  product_desc: MyText
+  product_ref_url: MyString
+  product_price: 10.99
+  sell_type: true
+  close_deal: true
+  user: one
+  category: one
+
+
+one_bid:
+  title: kapokai
+  type: BidItem
+  view_count: 1
+  body: MyText
+  sell_type: false
+  product_name: yummy kapokai
+  product_desc: yummy
+  product_ref_url: MyString
+  product_price: 1.99
+  sell_type: true
+  close_deal: true
+  user: two
+  category: one
+  bid_end_time: <%= (DateTime.now + (20*60) ) .to_s(:db) %>

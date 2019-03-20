@@ -13,7 +13,10 @@
 !/log/.keep
 !/tmp/.keep
 
-config/secrets.yml
+# Ignore images uploaded in Test and Development environments
+/public/system
+
+# config/secrets.yml
 coverage/*
 coverage
 

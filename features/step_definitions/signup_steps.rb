@@ -35,7 +35,9 @@ When("I fill the additional information and submit") do
   fill_in 'First name', with: @user.first_name
   fill_in 'Last name', with: @user.last_name
   fill_in 'Cell phone no', with: @user.cell_phone_no
-  fill_in 'Profession', with: @user.profession
+  page.find('#user_profession').find(:option, (@user.profession) ).select_option
+  # save_and_open_page
+  # fill_in 'Profession', with: @user.profession
   # pending # Write code here that turns the phrase above into concrete actions
   click_button 'Sign up'
 end

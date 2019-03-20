@@ -1,0 +1,51 @@
+/*
+ *
+ *= require jquery.countdown
+ */
+
+// "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import 'bootstrap-datetimepicker';
+@import "images";
+//@import "scaffolds";
+
+.readonly-field{
+  background-color: #cbcbcb;
+}
+
+.hidden {
+  display: none;
+}
+
+.countdown {
+  //font-family: trebuchet ms;
+  color: #2A3435;
+  border-width: 1px 1px 2px 1px;
+  border-style: solid;
+  border-color: #b0c6d2;
+  background: #d1eeee;
+  padding: 2px;
+  display: inline-block;
+}
+
+
+.countdown span:first-child {
+  margin-left: 0;
+}
+
+.countdown span span {
+  font-size: 18px;
+  display: block;
+}
+.user {
+  display: inline-block;
+  width: 40px;
+  height: 50px;
+  border-radius: 50%;
+
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+

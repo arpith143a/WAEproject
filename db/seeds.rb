@@ -14,6 +14,7 @@ admin = User.create( username:"admin",
              first_name: 'ADMIN',
              last_name: 'ADMIN',
              cell_phone_no: "0891438432",
+                     profession: 'staff',
             admin: true)
 
 
@@ -23,6 +24,7 @@ user1 = User.create( username:"joe",
              password_confirmation: "secret123",
              first_name: 'Joe',
              last_name: 'Dailey',
+                     profession: 'staff',
              cell_phone_no: "0899991457",
              admin: false)
 
@@ -32,6 +34,7 @@ user2 = User.create( username:"jee",
              password_confirmation: "secret123",
              first_name: 'Jee',
              last_name: 'Daaaaaa',
+                     profession: 'staff',
              cell_phone_no: "0899997777",
              admin: false)
 

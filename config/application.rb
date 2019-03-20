@@ -14,6 +14,7 @@ module WaeProject
     config.generators do |g|
       g.test_framework :test_unit
     end
+
     # config.app_generators.javascript_engine :typescript
     # Enable the asset pipeline
     # config.assets.enabled = true

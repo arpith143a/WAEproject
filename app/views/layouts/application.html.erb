@@ -11,21 +11,12 @@
 
 <%= render 'shared/navigation_bar' %>
 
+
+
 <body>
 
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-
-<% if flash[:error] %>
-    <div id="error">
-      <%= flash[:error] %>
-    </div>
-<% end %>
-
-
-
-
-<div class="container">
+<div class="container" style="margin-top: 100px">
+  <%= render 'shared/flash', flash: flash %>
   <%= yield %>
 </div>
 

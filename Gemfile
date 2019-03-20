@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.4.1'
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
@@ -11,14 +11,24 @@ gem 'paper_trail'
 gem 'omniauth-google-oauth2'
 gem 'paperclip', '~> 5.0.0'
 gem 'nested_form'
+gem 'simple_form'
+gem 'best_in_place'
 # https://github.com/sferik/rails_admin
 gem 'rails_admin', '~> 1.2'
 gem 'rails_admin_history_rollback'
 
-gem 'bootstrap-sass', '~> 3.3.6'
+gem 'bootstrap-sass', '~> 3.3.5.1'
+gem 'sass-rails', '~> 5.0.1'
+# http://eonasdan.github.io/bootstrap-datetimepicker/
+gem 'momentjs-rails', '>= 2.9.0'
+gem 'bootstrap3-datetimepicker-rails', '~> 4.17.47'
+
 # https://github.com/typescript-ruby/typescript-rails
 # gem 'typescript-rails'
 gem 'jquery-rails'
+
+# https://github.com/mauriciopasquier/jquery-countdown-rails
+gem 'jquery-countdown-rails'
 
 # gem 'simplecov', :require => false, :group => :test
 
@@ -50,8 +60,7 @@ gem 'pg', '~> 0.18'
 gem 'bcrypt'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+
 
 
 
